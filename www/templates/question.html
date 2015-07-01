@@ -1,0 +1,51 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">My Question</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeQuestion()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form multiple="{{allowMultiple}}" >
+      <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Choose Your Subject
+        </div>
+        <select ng-model="questionData.subject">
+          <option value="math">MATH</option>
+          <option value="green" selected >Green</option>
+          <option value="red">Red</option>
+        </select>
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Tag Your Question
+        </div>
+        <select ng-model="questionData.tag">
+          <option value="math">MATH</option>
+          <option value="green" selected >Green</option>
+          <option value="red">Red</option>
+        </select>
+      </label>
+      
+        <label class="item" align="center">
+          <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" align="center">
+          <button class="button" ng-click="takePicture()"><img ng-show="imgURI === undefined" ng-src="http://placehold.it/300x300" align="center" ng-model="isimg"></button>
+        </label>
+
+         <label class="item item-text-wrap" align="center">
+          <textarea placeholder="Type Your Question Here" ng-model="questionData.posting"></textarea>
+        </label>
+        <!--        
+        <button class="button" ng-click="SimpanGambar()">Simpan</button>-->
+
+      </div>
+      <label class="item">
+          <button class="button button-block button-positive" ng-click="SimpanGambar(questionData)">Submit</button>
+        </label>
+
+
+    </form>
+  </ion-content>
+</ion-modal-view>
